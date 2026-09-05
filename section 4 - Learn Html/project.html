@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Registration Page</title>
+</head>
+
+<body>
+    <main>
+
+        <header>
+            <hgroup>
+            <h1>TechFest 2026 — Web Development Workshop</h1>
+            <p>Bridging Innovation and Architecture for the Future Web.</p>
+        </hgroup>
+        <nav>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Our campus</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="Eventinformation">
+
+        <div class="eventDescription">
+            <h2>Event Description</h2>
+            <p>Welcome to the premier web development event of TechFest 2026! Whether you are an aspiring creator
+                looking to build your first website or a student eager to master modern industry tools, this hands-on
+                workshop is designed to elevate your digital skills from concept to deployment.The digital world is
+                evolving rapidly, and web development remains at the core of this transformation. This comprehensive
+                session bridges the gap between foundational theory and real-world application, equipping you with the
+                practical knowledge needed to architect the modern web.</p>
+        </div>
+
+        <div>
+            <h2>Date, Time, Venue</h2>
+            <dl>
+                <dt><strong>Date: </strong></dt>
+                <dd><time datetime="2026-03-14">Saturday, March 14, 2026</time></dd>
+
+                <dt><strong>Time: </strong></dt>
+                <dd><time datetime="10:00">10:00 AM</time> - <time datetime="15:30">3:30 PM IST</time></dd>
+
+                <dt><strong>Venue:</strong></dt>
+                <dd>Seminar Hall 3, Block C, TechFest Campus</dd>
+            </dl>
+        </div>
+
+        <div>
+            <h2>Important Information</h2>
+            <ul>
+                <li><strong>Prerequisites:</strong>No prior advanced coding experience is required! However, a basic
+                    familiarity with how to navigate a computer and a text editor is highly recommended.</li>
+
+                <li><strong>Hardware Requirements:</strong> All participants must bring their own laptop along with its
+                    charger. Tablets or mobile devices are not sufficient for the practical coding sessions.</li>
+
+                <li><strong>Software Prerequisites:</strong>Please pre-install Visual Studio Code (or your preferred
+                    IDE) and the latest version of Google Chrome or a modern web browser before arriving.</li>
+
+                <li><strong>Check-In Details:</strong> Reporting starts at 9:30 AM IST. Please bring a digital or
+                    printed copy of your registration QR code/ticket for seamless entry.</li>
+
+                <li><strong>On-Campus Amenities:</strong>Complimentary Wi-Fi access will be provided at the venue.
+                    Complimentary lunch and refreshments will also be served during the mid-day break.</li>
+            </ul>
+        </div>
+    </section>
+    <section class="ScheduleTable">
+        <h2>Schedule Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>TIME</th>
+                    <th>SESSION</th>
+                    <th>SPEAKER</th>
+                    <th>ROOM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10:00 AM</td>
+                    <td>Opening</td>
+                    <td>---</td>
+                    <td>Hall A</td>
+                </tr>
+                <tr>
+                    <td>11:00 AM</td>
+                    <td>HTML Workshop</td>
+                    <td>Rahul</td>
+                    <td>Lab 1</td>
+                </tr>
+                <tr>
+                    <td>1:00 pm</td>
+                    <td>Project Session</td>
+                    <td>Priya</td>
+                    <td>Lab 1</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <section>
+        <h2>Registration Form</h2>
+        <form>
+            <div>
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName">
+            </div>
+
+            <div>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div>
+
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+
+            <div>
+
+
+                <label for="College">Collge</label>
+                <input type="text" id="College" name="College">
+            </div>
+
+            <div>
+
+
+                <label for="year">year</label>
+                <input type="number" id="year" name="year">
+            </div>
+
+            <div>
+
+
+                <label for="event/session">
+                    <select name="eventSession" id="eventSession">
+                        <option value="2026">2026</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <p>select your gender</p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">male</label>
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <div>
+                <p>Dietary Preferences</p>
+
+                <label>
+                    <input type="checkbox" name="diet" value="vegetarian"> Vegetarian
+                </label>
+
+                <label>
+                    <input type="checkbox" name="diet" value="vegan"> Vegan
+                </label>
+
+                <label>
+                    <input type="checkbox" name="diet" value="gluten-free"> Gluten-Free
+                </label>
+            </div>
+
+            <div>
+                <label for="user-message">Message:</label>
+
+                <textarea id="user-message" name="message" rows="5" cols="40" placeholder="Type your message here.."
+                    required></textarea>
+            </div>
+
+            <div>
+                <input type="checkbox" id="terms" name="terms_condition">
+                <label for="terms">
+                    i agree to the <a href="/tersm=and-conditions" target="_blank">terms and conditions</a>
+                </label>
+            </div>
+            <button type="submit">submit</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Multimedia section</h2>
+
+        <div>
+            <img width="300" height="280"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbfe62Rrd2Y74v0YMcCFtkAjnXwFCdhlgmyR9LqADA5A&s=10"
+                alt="">
+        </div>
+
+        <div>
+            <video src="27706-365890968_medium.mp4" controls autoplay loop preload="auto" width="300"
+                height="280">play</video>
+        </div>
+
+        <div><audio src=""></audio></div>
+    </section>
+
+    <footer>
+        <p>&copy; all rights reserved</p>
+    </footer>
+</main>
+</body>
+
+</html>
