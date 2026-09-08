@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant menu & ordering page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        html,
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* styling of the main container  */
+        .mainContainer {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10%;
+            width: 100%;
+            background-color: grey;
+            padding: 10px 15px;
+
+        }
+
+        .info {
+            width: 55%;
+        }
+
+        .info ul {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            list-style-type: none;
+
+        }
+
+        .info a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* styling container 2*/
+
+        .container2 {
+            width: 100%;
+            height: 35%;
+            background-image: url("ChatGPT\ Image\ Sep\ 8\,\ 2026\,\ 10_29_01\ AM.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .container2 div {
+            display: flex;
+            width: 20%;
+            height: 15%;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .container2 button {
+            padding: 10px 15px;
+            border: none;
+            margin: 5px;
+            border-radius: 9px;
+            font-weight: bold;
+
+        }
+        #viewBtn{
+            background-color: grey;
+            color: white;
+        }
+        #reserveBtn{
+            background-color: green;
+            color: white;
+        }
+        .container2 h1{
+            font-size: 80px;
+        }
+
+        /* styling continer 3 */
+
+        .container3{
+            height: 35%;
+            width: 100%;
+            background-color: green;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .subDiv {
+
+            height: 100%;
+            width: 31%;
+            background-color: gray;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="container1">
+            <div>
+                <h1>Basil & Ember</h1>
+                <p>Modern Indian Kitchen</p>
+            </div>
+            <div class="info">
+                <ul>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Our story</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Reserve a Table</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container2">
+        <h1>Food and Venue gathering for</h1>
+            <div>
+                <button id="viewBtn">view menu</button>
+                <button id="reserveBtn">Reserve a table</button>
+            </div>
+        </div>
+
+        
+        <div class="container3">
+            <div class="subDiv1 subDiv">
+                <h2>Starter</h2>
+                <div>
+
+                </div>
+            </div>
+            <div class="subDiv2 subDiv">
+                <h2>main course</h2>
+                <div>
+
+                </div>
+            </div>
+            <div class="subDiv3 subDiv">
+                <h2>Deserted</h2>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
