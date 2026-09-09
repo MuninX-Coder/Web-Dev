@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Developer Profile card</title>
+
+    <link href="../../../src/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 min-h-screen text-white">
+
+    <nav class="bg-gray-800 px-6 py-4 flex justify-between items-center shadow-lg w-full">
+        <h2 class="text-xl font-bold text-amber-400 tracking-wide">Munin Borah</h2>
+        <ul class="flex space-x-6 text-sm font-medium">
+            <li><a href="#" class="hover:text-amber-400 transition-colors duration-200">Home</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition-colors duration-200">Project</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition-colors duration-200">Skill</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition-colors duration-200">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Hero/Profile Section -->
+    <div
+        class="w-full min-h-[400px] bg-gray-800 flex flex-col md:flex-row items-center justify-center gap-12 px-8 py-16">
+
+        <!-- Left Side: Image Container -->
+        <div class="flex-shrink-0">
+            <!-- Temporary dummy image lagayi hai, apni pic se replace kar lena -->
+            <img class="w-48 h-48 rounded-full border-1 border-amber-400 object-cover shadow-xl"
+                src="profile pic .webp" alt="Munin Borah">
+        </div>
+
+        <!-- Right Side: Information Container -->
+        <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4 max-w-xl">
+
+            <!-- Status Badge -->
+            <a href="#"
+                class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/20 hover:bg-emerald-500/20 transition">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Available for new opportunities
+            </a>
+
+            <!-- Name & Title -->
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Munin Borah</h1>
+                <h2 class="text-xl font-medium text-amber-400 mt-1">Full-Stack Engineer</h2>
+            </div>
+
+            <!-- Handle/Username -->
+            <a href="#"
+                class="text-gray-400 hover:text-white transition font-mono text-sm bg-gray-900/50 px-3 py-1 rounded-md">
+                @muninborah
+            </a>
+
+            <!-- Bio -->
+            <p class="text-gray-300 text-base leading-relaxed">
+                Building software that I actually want to use.
+            </p>
+        </div>
+    </div>
+
+<!-- Main Counter/Stats Container: Mobile par flex-col, Medium/Badi screen par md:flex-row -->
+<div class="w-full bg-gray-900/50 border border-gray-800 rounded-xl p-6 flex flex-col md:flex-row justify-around items-center gap-4 md:gap-6 shadow-md">
+    
+    <!-- Card 1: Projects -->
+    <div class="flex flex-row items-center gap-4 bg-gray-800/40 p-4 rounded-xl border border-gray-700/30 w-full md:w-auto min-w-[200px] justify-start md:justify-center">
+        <!-- Icon -->
+        <div class="w-12 h-12 bg-amber-400/10 rounded-lg flex items-center justify-center border border-amber-400/20 text-amber-400 flex-shrink-0">
+            📁
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">24</h2>
+            <p class="text-xs font-medium text-gray-400 uppercase tracking-wider">Projects</p>
+        </div>
+    </div>
+
+    <!-- Card 2: Open Source -->
+    <div class="flex flex-row items-center gap-4 bg-gray-800/40 p-4 rounded-xl border border-gray-700/30 w-full md:w-auto min-w-[200px] justify-start md:justify-center">
+        <!-- Icon -->
+        <div class="w-12 h-12 bg-amber-400/10 rounded-lg flex items-center justify-center border border-amber-400/20 text-amber-400 flex-shrink-0">
+            💻
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">8</h2>
+            <p class="text-xs font-medium text-gray-400 uppercase tracking-wider">Open Source</p>
+        </div>
+    </div>
+
+    <!-- Card 3: Experience -->
+    <div class="flex flex-row items-center gap-4 bg-gray-800/40 p-4 rounded-xl border border-gray-700/30 w-full md:w-auto min-w-[200px] justify-start md:justify-center">
+        <!-- Icon -->
+        <div class="w-12 h-12 bg-amber-400/10 rounded-lg flex items-center justify-center border border-amber-400/20 text-amber-400 flex-shrink-0">
+            👑
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">4 yrs</h2>
+            <p class="text-xs font-medium text-gray-400 uppercase tracking-wider">Experience</p>
+        </div>
+    </div>
+    
+</div>
+
+
+</body>
+
+</html>
