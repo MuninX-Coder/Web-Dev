@@ -65,3 +65,61 @@ console.log(dog.eats)
 console.log(dog.color)  // undefined as koi v object ka andar nai hai
 
 // agar dono mai same properties hoga then apna first wala ka vlaue aiga as js first khud ka scope mai search kartia
+
+console.log(animal.bark)  // undefined as, dog jo animal object ko access kar saktai, animal jo dog ko nai
+
+
+
+// PROTOTYPE CHAIN
+
+const livingThing = {
+    alive: true,
+}
+
+const myAnimal = {
+    eats : true,
+    __proto__: livingThing
+}
+
+const myDog = {
+    bark: true,
+    __proto__: myAnimal
+}
+
+// myDog --> myAnimal --> livingThing sai
+
+console.log(myDog.alive);
+
+// this is a prototype chain khud ka uder dheko fir apna prototype mai fir aur next prototype mai and so on, 
+
+
+// __proto__
+// iska mtlb hotai yeh object ka prototype kkonsa object hai
+
+// dog.__proto__  dog ka prototype konsa object hai
+
+
+// Object.getPrototypeOf()
+// same realationship ko check karne ka ek better standard way
+
+console.log(Object.getPrototypeOf(myDog))  // yeh just check karne mai help kartai kon kisa prototype hai, in this case myDog object ka prototype kon hai thats myAnimal
+
+
+const eating = {
+    eat(){
+        return `Eating`;
+    }
+}
+
+const Bruno = {
+    name: "Bruno",
+    __proto__: eating
+}
+
+const Mimi = {
+    name : "Mimi",
+    __proto__: eating
+}
+
+
+console.log(Mimi.eat())
