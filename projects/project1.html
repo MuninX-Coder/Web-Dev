@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Reset basic margins */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f4f4f9;
+        transition: background-color 0.4s ease;
+        /* Smooth color transition */
+    }
+
+    /* Card Container */
+    .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    /* Palette Container */
+    .color-palette {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Base style for the small boxes */
+    .color-box {
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .color-box:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Individual Colors for the 4 boxes */
+    #box-1 {
+        background-color: #ff6b6b;
+        /* Reddish / Coral */
+    }
+
+    #box-2 {
+        background-color: #4ecdc4;
+        /* Teal */
+    }
+
+    #box-3 {
+        background-color: #ffe66d;
+        /* Yellow */
+    }
+
+    #box-4 {
+        background-color: #1a535c;
+        /* Dark Teal */
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1 id="heading">Color Changer Project</h1>
+        <p id="paragraph">
+            Click on any of the color boxes below to change the background color or theme of this section!
+        </p>
+
+        <!-- 4 Small Color Boxes -->
+        <div class="color-palette">
+            <div class="color-box button box-1" id="box-1"></div>
+            <div class="color-box  button box-2" id="box-2"></div>
+            <div class="color-box  button box-3" id="box-3"></div>
+            <div class="color-box  button box-4" id="box-4"></div>
+        </div>
+    </div>
+
+    <!-- Link your JavaScript file here later -->
+
+</body>
+<script>
+    const buttons = document.querySelectorAll(".button")
+    const container = document.querySelector(".container")
+    const body = document.querySelector("body")
+    buttons.forEach((button) => {
+        button.addEventListener("click", function (e) {
+            if (e.target.id === "box-1") {
+                body.style.backgroundColor = "#ff6b6b";
+            } else if (e.target.id === "box-2") {
+                body.style.backgroundColor = "#4ecdc4";
+            } else if (e.target.id === "box-3") {
+                body.style.backgroundColor = "#ffe66d";
+            } else if (e.target.id === "box-4") {
+                body.style.backgroundColor = "#1a535c";
+            }
+        });
+    });
+</script>
+
+</html>
