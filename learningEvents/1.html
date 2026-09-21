@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML events</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Heading Style */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+            color: #38bdf8;
+            text-align: center;
+        }
+
+        /* Grid Layout for UL */
+        ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Individual List Items */
+        li {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        li:hover {
+            transform: translateY(-4px);
+            border-color: #38bdf8;
+        }
+
+        /* Fixed Dimensions for Images */
+        li img {
+            width: 280px;
+            /* Fixed Width */
+            height: 200px;
+            /* Fixed Height */
+            object-fit: cover;
+            /* Prevents images from stretching/distorting */
+            border-radius: 10px;
+            background-color: #334155;
+            /* Placeholder background */
+        }
+
+        li a {
+            color: white;
+            list-style-type: none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Image Gallery</h1>
+
+    <ul id="images">
+        <li><img src="YOUR_IMAGE_URL_HERE_1" id="photo1" alt="Image 1"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_2" id="photo2" alt="Image 2"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_3" id="photo3" alt="Image 3"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_4" id="photo4" alt="Image 4"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_5" id="photo5" alt="Image 5"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_6" id="photo6" alt="Image 6"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_7" id="photo7" alt="Image 7"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_8" id="photo8" alt="Image 8"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_9" id="photo9" alt="Image 9"></li>
+        <li><img src="YOUR_IMAGE_URL_HERE_10" id="photo10" alt="Image 10"></li>
+        <li id="google"><a href="#">google</a></li>
+    </ul>
+
+</body>
+<script>
+    // document.getElementById("photo7").onclick = function(){
+    //     alert("image 7 clicked")
+    // }
+
+    // attachEvent()
+    // jQuery -- onEvent
+
+    // type, timestamp, defalutPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY 
+    // altkey, ctrlKey, shiftkey, keyCode
+
+    document.getElementById("images").addEventListener("click", function (e) {
+        console.log("click inside the ul")
+
+    }, true)  // false is bydefault, event bubling hotai then , true hone sai event capturing
+
+    document.getElementById("photo7").addEventListener("click", function (e) {
+        console.log("photo 7 clicked")
+        e.stopPropagation();  // evetn buble hoke uper ka element mai nai jaiga
+    }, true)
+
+    // event propogation
+
+    // event bubling -- neche sai uper jana, inner element sai outer element mai jatai, event joo inner sai outer jatai
+
+
+    // event capturing -- true karna hotai, by default false, hotai, and event capturing mai kya hotai ki first outer wala fir inner wala, uper sai niche 
+
+
+    document.getElementById("google").addEventListener("click", function (e) {
+        console.log("google clicked")
+        e.preventDefault();
+
+    })
+
+
+    document.querySelector("ul").addEventListener("click", function (e) {
+        console.log(e.target.parentNode);
+        if (e.target.tagName === "IMG") {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            // removeIt.remove()
+            removeIt.parentNode.removeChild(removeIt)
+        }
+    })
+
+</script>
+
+</html>

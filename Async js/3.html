@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Chai aur Javascript -- ASYNC</h1>
+    <button id="stop">Stop</button>
+    <button id="start">start</button>
+</body>
+
+<script>
+    // setInterval -- har etna second mai ek bar tho run hoga, in this case har 1 second mai run karo
+
+    const sayDate = function (str){
+        console.log(str, Date.now())
+    }
+    const intervalId = setInterval(sayDate, 1000, "hi"); // reference lena
+
+    // clearInteral 
+    clearInterval(intervalId)  // referece ko dena
+  
+</script>
+</html>

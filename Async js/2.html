@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Chai aur code -- ASYNC</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // 2 second ka timer ka baad code ko execute
+    setTimeout(function(){
+        console.log("Munin")
+    }, 2000)                    // ek mthod hai, function and yeh brower sai meltai
+
+    
+    const sayMunin = function(){
+        console.log("say my Name: Munin")
+    }
+
+
+    setTimeout(sayMunin, 2000)  // sayMunin  -- iska reference dedoo fir 2 second baad woh run hoga
+
+    const chagneText = function(){
+         document.querySelector("h1").innerHTML = "Learning JS"
+    }
+    setTimeout(chagneText, 3000);
+
+    // clear timout -- rokne ke lye
+    // isko chaiye reference mtlb konsa wala settimout ko hatanna hai
+
+    const changeMe = setTimeout(chagneText, 5000)
+
+  document.querySelector("button").addEventListener("click", function(){
+    clearTimeout(changeMe)
+    console.log("STopped")
+  })
+</script>
+</html>

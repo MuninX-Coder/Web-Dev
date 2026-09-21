@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL CLOCK</title>
+    <style>
+        /* Import futuristic gaming font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0e15;
+    /* Cyberpunk grid background effect */
+    background-image: 
+        linear-gradient(rgba(0, 255, 204, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Main Container Card */
+.center {
+    background: rgba(18, 20, 29, 0.85);
+    border: 2px solid #00ffcc;
+    border-radius: 16px;
+    padding: 40px 60px;
+    text-align: center;
+    position: relative;
+    /* Neon Glow Box Shadow */
+    box-shadow: 
+        0 0 20px rgba(0, 255, 204, 0.3),
+        inset 0 0 15px rgba(0, 255, 204, 0.15),
+        0 0 50px rgba(255, 0, 127, 0.2);
+    backdrop-filter: blur(8px);
+    max-width: 90%;
+}
+
+/* Corner accent details for gamer aesthetic */
+.center::before,
+.center::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-color: #ff007f;
+    border-style: solid;
+}
+
+.center::before {
+    top: -2px;
+    left: -2px;
+    border-width: 4px 0 0 4px;
+}
+
+.center::after {
+    bottom: -2px;
+    right: -2px;
+    border-width: 0 4px 4px 0;
+}
+
+/* Banner / Header Title */
+#banner {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#banner span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ff007f;
+    text-shadow: 
+        0 0 8px #ff007f,
+        0 0 20px #ff007f;
+    background: rgba(255, 0, 127, 0.1);
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 0, 127, 0.4);
+    display: inline-block;
+}
+
+/* Digital Clock Output */
+#clock {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #00ffcc;
+    letter-spacing: 5px;
+    text-shadow: 
+        0 0 10px #00ffcc,
+        0 0 20px #00ffcc,
+        0 0 40px #00ffcc;
+    background: #050608;
+    padding: 20px 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    min-width: 320px;
+    min-height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 500px) {
+    .center {
+        padding: 30px 20px;
+    }
+    #clock {
+        font-size: 2.5rem;
+        min-width: 240px;
+    }
+    #banner span {
+        font-size: 0.9rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div id="banner"><span>Your local time</span></div>
+        <div id="clock"></div>
+    </div>
+</body>
+<script>
+    const clock = document.getElementById("clock");
+   
+   
+    setInterval(() => {
+         let date = new Date()
+         clock.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+
+</script>
+</html>
