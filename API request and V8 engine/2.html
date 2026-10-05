@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+</head>
+<body>
+    <!-- promise - is basically an object jo represent kartai ek future value, jo avi nai hai but in future aiga -->
+
+    <script>
+        // we mostly consume promise 
+
+        // fetch("https://somethings.com").then().catch().finally()
+
+        // how to create promise 
+
+        const promiseOne = new Promise(function(resolve, reject){
+
+            // do an aync task
+            // db calls, cryptography, network 
+            setTimeout(function(){
+                console.log("async task is complete")
+                resolve()
+            }, 2000)
+        }); 
+
+        promiseOne.then(function(){
+            console.log("promised consumed");
+            
+        })        // .then ka direct connectoin hai resolve ka sath
+    </script>
+</body>
+</html>

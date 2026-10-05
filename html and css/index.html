@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pinky</title>
+    <style>
+      /* ---------- GLOBAL ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 60px 8%;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #f8f7ff;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 79, 145, 0.25), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(132, 94, 247, 0.25), transparent 30%),
+        linear-gradient(135deg, #0f0c1d, #19132b, #0d0b16);
+
+    overflow-x: hidden;
+}
+
+
+/* ---------- FLOATING BACKGROUND EFFECT ---------- */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    animation: float 8s ease-in-out infinite alternate;
+}
+
+body::before {
+    background: #ff3f81;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    background: #7048ff;
+    bottom: -120px;
+    right: -100px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(50px, 40px) scale(1.2);
+    }
+}
+
+
+/* ---------- LISTS ---------- */
+
+ul,
+ol {
+    width: 320px;
+    margin-bottom: 35px;
+    padding: 25px 30px 25px 50px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    backdrop-filter: blur(15px);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition: 0.4s ease;
+}
+
+ul:hover,
+ol:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 20px 50px rgba(255, 62, 132, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+li {
+    padding: 10px 12px;
+    margin: 6px 0;
+
+    color: #e9e4f5;
+    font-size: 17px;
+
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+}
+
+li:hover {
+    color: white;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 63, 129, 0.25),
+        rgba(112, 72, 255, 0.2)
+    );
+
+    transform: translateX(10px);
+    letter-spacing: 1px;
+}
+
+
+/* ---------- HEADING ---------- */
+
+h3 {
+    margin: 45px 0 20px;
+
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        90deg,
+        #ff5c9a,
+        #ff9ac2,
+        #9c7cff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        filter: drop-shadow(0 0 5px rgba(255, 76, 145, 0.2));
+    }
+
+    to {
+        filter: drop-shadow(0 0 15px rgba(255, 76, 145, 0.6));
+    }
+}
+
+
+/* ---------- TABLE ---------- */
+
+table {
+    width: min(700px, 100%);
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    animation: tableAppear 0.8s ease forwards;
+}
+
+@keyframes tableAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- CAPTION ---------- */
+
+caption {
+    caption-side: top;
+    padding: 20px;
+
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    color: #ff9bc2;
+}
+
+
+/* ---------- TABLE CELLS ---------- */
+
+th,
+td {
+    padding: 16px 20px;
+    text-align: left;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+th {
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 67, 133, 0.35),
+        rgba(115, 75, 255, 0.25)
+    );
+
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    color: #dcd6e8;
+    transition: 0.3s ease;
+}
+
+
+/* ---------- TABLE ROW ANIMATION ---------- */
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover,
+table tr:not(:first-child):hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+table tr:not(:first-child):hover td {
+    color: white;
+    transform: translateX(4px);
+}
+
+
+/* ---------- LAST ROW ---------- */
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 35px 20px;
+    }
+
+    ul,
+    ol {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+       
+    </style>
+</head>
+<body>
+<ul>
+    <li>apple </li>
+    <li>orange</li>
+    <li>rose</li>
+</ul>
+<ol>
+    <li> juice</li>
+    <li> initial-scale</li>
+    <li>box</li>
+</ol>
+
+<h3>My table</h3>
+<table>
+<caption>Student Detailes</caption>
+<tr>
+    <th>SL NO.</th>
+    <th>Name</th>
+    <th>Marks</th>
+</tr>
+<tr>
+    <td>1</td>
+    <td>Rohan</td>
+    <td>56</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td>Arpita</td>
+    <td>89</td>
+</tr>
+</table>
+</body>
+
+</html>

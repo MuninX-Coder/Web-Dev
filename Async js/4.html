@@ -13,7 +13,7 @@
     <button id="stop">stop</button>
 </body>
 <script>
-  
+
     // generate a random color 
     const randomColor = function () {
         const hex = "0123456789ABCDEF"
@@ -26,7 +26,9 @@
     let intervalID;
     const startChangingColor = function () {
 
-        intervalID = setInterval(changeBGColor, 1000)
+        if (!intervalID) {
+            intervalID = setInterval(changeBGColor, 1000)
+        }
 
         function changeBGColor() {
             document.body.style.backgroundColor = randomColor();
@@ -39,7 +41,7 @@
 
     }
 
-  document.querySelector("#start").addEventListener("click", startChangingColor)
+    document.querySelector("#start").addEventListener("click", startChangingColor)
     document.querySelector("#stop").addEventListener("click", stopChangingColor)
 </script>
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Press Display</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #888888;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .key-card {
+            background-color: #2a2a2a;
+            border: 2px solid #444444;
+            border-radius: 12px;
+            padding: 40px 60px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+
+        .key-text {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #49cad1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title">You Pressed</div>
+        <div class="key-card">
+            <div class="key-text">A</div>
+        </div>
+    </div>
+
+</body>
+<script>
+    const insert = document.querySelector("#key-card")
+    const displayKey = document.querySelector(".key-text");
+    window.addEventListener("keydown", (e) => {
+        let pressedkey = e.key;
+        if (pressedkey === " " || pressedkey === null) {
+            displayKey.textContent = `space`;
+        } else {
+            displayKey.textContent = pressedkey;
+        }
+
+    })
+</script>
+
+</html>
